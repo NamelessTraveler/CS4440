@@ -19,10 +19,20 @@ print(originalToken)
 originalText = url[index1:url.__len__()]
 print(originalText)
 
-targeText = originalText+appendText
+targeText = originalText + appendText
 print(targeText)
+print()
 
+length = originalText.__len__() + 8
+bits = (length + padding(length * 8).__len__()) * 8
 
+h = md5(state = originalToken, count = bits)
+h.update(appendText)
+
+token = h.hexdigest()
+print(token)
+
+url = pre + token + targeText
 
 parsedUrl = urlparse(url)
 conn = httplib.HTTPConnection(parsedUrl.hostname,parsedUrl.port)
