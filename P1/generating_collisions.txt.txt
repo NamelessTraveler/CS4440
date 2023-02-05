@@ -1,5 +1,5 @@
 # Question 1
-time_for_fastcoll (e.g. 3.456s)
+0.568s
 
 # Question 2
 file1:
