@@ -11,8 +11,5 @@ conn.request("GET", parsedUrl.path + "?" + parsedUrl.query)
 print(conn.getresponse().read())
 
 
+targetText = "&command3=UnlockAllSafes"
 
-m = "Use HMAC, not hashes"
-h = md5()
-h.update(m)
-print(h.hexdigest())
