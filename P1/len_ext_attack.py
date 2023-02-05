@@ -7,18 +7,27 @@ url = sys.argv[1]
 # Your code to modify the URL goes here!
 
 appendText = "&command3=UnlockAllSafes"
-originalurl = "http://cs4440.eng.utah.edu/project1/api?token=402a574d265dc212ee64970f159575d0&user=admin&command1=ListFiles&command2=NoOp"
-pre = "http://cs4440.eng.utah.edu/project1/api?token="
-originalText = "&user=admin&command1=ListFiles&command2=NoOp"
-originalToken = "402a574d265dc212ee64970f159575d0"
-targeText = originalText+appendText
+
+index0 = url.find('=')
+pre = url[0:index0+1]
 print(pre)
+
+index1 = url.find('&')
+originalToken = url[index0+1:index1]
 print(originalToken)
+
+originalText = url[index1:url.__len__()]
+print(originalText)
+
+targeText = originalText+appendText
 print(targeText)
-# parsedUrl = urlparse(url)
-# conn = httplib.HTTPConnection(parsedUrl.hostname,parsedUrl.port)
-# conn.request("GET", parsedUrl.path + "?" + parsedUrl.query)
-# print(conn.getresponse().read())
+
+
+
+parsedUrl = urlparse(url)
+conn = httplib.HTTPConnection(parsedUrl.hostname,parsedUrl.port)
+conn.request("GET", parsedUrl.path + "?" + parsedUrl.query)
+print(conn.getresponse().read())
 
 
 
