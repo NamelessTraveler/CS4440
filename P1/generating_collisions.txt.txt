@@ -1,0 +1,17 @@
+# Question 1
+time_for_fastcoll (e.g. 3.456s)
+
+# Question 2
+file1:
+file1_hex_dump
+file2:
+file2_hex_dump
+
+# Question 3
+md5_hash
+
+# Question 4
+file1:
+file1_sha256_hash
+file2:
+file2_sha256_hash
